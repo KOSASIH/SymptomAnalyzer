@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptomAnalyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SymptomAnalyzer</h1>
+            <p class="subtitle">Powered by Bio-Medical-MultiModal-Llama-3-8B-V1</p>
+        </header>
+        
+        <main>
+            <section class="input-section">
+                <h2>Describe Your Symptoms</h2>
+                <p class="instruction">Please describe your symptoms in detail. Include when they started, their severity, and any other relevant information.</p>
+                <textarea id="symptom-input" placeholder="Example: I've had a severe headache for the past 2 days, along with a mild fever and fatigue..."></textarea>
+                <button id="analyze-btn">Analyze Symptoms</button>
+            </section>
+            
+            <section class="results-section" id="results-container" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div class="disclaimer">
+                    <p><strong>Disclaimer:</strong> This analysis is not a medical diagnosis. Always consult with a healthcare professional for proper medical advice.</p>
+                </div>
+                <div class="symptoms-summary">
+                    <h3>Symptoms Analyzed:</h3>
+                    <p id="symptoms-text"></p>
+                </div>
+                <div class="potential-conditions">
+                    <h3>Potential Conditions:</h3>
+                    <div id="conditions-list"></div>
+                </div>
+            </section>
+            
+            <div class="loading" id="loading-indicator">
+                <div class="spinner"></div>
+                <p>Analyzing symptoms...</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 SymptomAnalyzer. This tool is for informational purposes only and should not replace professional medical advice.</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
